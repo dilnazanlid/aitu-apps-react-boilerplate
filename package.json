@@ -16,7 +16,10 @@
     "@types/react-dom": "^16.9.10",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
     "ionicons": "^5.4.0",
+    "mongoose": "^5.12.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
@@ -62,7 +65,9 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "2.4.6"
+    "@capacitor/cli": "2.4.6",
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
   },
   "description": "An Ionic project"
 }
