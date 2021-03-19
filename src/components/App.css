@@ -1,24 +1,24 @@
 /* Without setting height the slides will take up the height of the slide's content */
-ion-slides {
-  height: 100%;
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #EDC7B7;
 }
-
-.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.button {
+  margin: 0;
+  position: absolute;
+  top: 80%; left: 30%; right: 30%;
 }
-
-.slide-block {
-  padding: 0 16px;
-  text-align: left;
+.welcome {
+  margin: 0;
+  position: absolute;
+  top: 60%; left: 30%; right: 30%;
+  text-align: center;
 }
-
-.slide-block h2 {
-  font-weight: bold;
-}
-
-.slide-button {
-  padding: 0 16px 27px;
-  width: 100%;
+.question {
+  margin: 0;
+  position: absolute;
+  top: 20%; left: 30%; right: 30%;
+  text-align: center;
 }

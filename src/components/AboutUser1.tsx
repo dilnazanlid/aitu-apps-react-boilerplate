@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import aituBridge from "@btsd/aitu-bridge";
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {
@@ -28,9 +28,8 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import AboutUser1 from "./AboutUser1";
 
-const App: React.FC = () => {
+const AboutUser1: React.FC = () => {
   async function getMe() {
     try {
       const data = await aituBridge.getMe();
@@ -53,16 +52,11 @@ const App: React.FC = () => {
     <IonApp>
       <IonContent>
         <div className = "container">
-          <h2 color="primary" className="welcome">
-            Приветствуем Вас!
+          <h2 color="primary" className="question">
+          Расскажите о себе, ${name}
           </h2>
-        <Router> <Link to = "/register"><IonButton class="button">
-        Начать
-        </IonButton></Link>
-        <Route path="/" exact component={App}/>
-                <Route path="/register" component={AboutUser1}></Route>  
-                <Route path="/register/second" component={AboutUser1}></Route>        
-        </Router>
+        <IonButton href="/register" class="button">
+        Начать</IonButton>
         </div>
       
       </IonContent>
@@ -70,4 +64,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default AboutUser1;
