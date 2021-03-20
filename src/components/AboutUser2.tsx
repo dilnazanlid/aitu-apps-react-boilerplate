@@ -91,10 +91,10 @@ const AboutUser2: React.FC = () => {
   return (
     <IonApp>
       <IonContent>
+      <div className = "container">
           <h2 className="top">
             Какой Ваш ТОП песен, ${name} ?
           </h2>
-          
           <IonItem>
             <IonInput value={text} placeholder="Enter Input" onIonChange={e => setText(e.detail.value!)}></IonInput>
           </IonItem>
@@ -113,7 +113,7 @@ const AboutUser2: React.FC = () => {
           
           <h3 className = "buttonLink">Выбрать интересы</h3> 
           <h4 className = "skipLink"> Пропустить</h4>
-        
+        </div>
       </IonContent>
       
     </IonApp>

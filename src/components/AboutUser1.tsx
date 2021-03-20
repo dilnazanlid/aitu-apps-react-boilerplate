@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import aituBridge from "@btsd/aitu-bridge";
 import {Link } from 'react-router-dom';
 import DatePicker from 'react-date-picker';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 import {
   IonApp,
   IonContent,
@@ -31,10 +33,13 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 
 const AboutUser1: React.FC = () => {
+  
   async function getMe() {
     try {
-      const data = await aituBridge.getMe();
-      setName(data.name);
+      const data = await aituBridge.getPhone();
+      const id = await aituBridge.getMe();
+      setPhone(data.phone);
+      setId(id.id);
     } catch (e) {
       // handle error
       console.log(e);
@@ -47,11 +52,17 @@ const AboutUser1: React.FC = () => {
     }
   }, []);
 
-  const [name, setName] = useState("<username>");
+  const [phone, setPhone] = useState("");
+  const [id, setId] = useState("");
+  const [location, setLocation] = useState("Astana");
   const [value, onChange1] = useState(new Date());
+  const opts = ["Муж", "Жен"];
+  const opts2 = ["Гетеро", "Гомо", "Би"];
+  const defopt = opts[0]; const defopt2 = opts2[0];
   return (
     <IonApp>
       <IonContent>
+        <div className = "container">
       <h2 color="primary" className="question">
           Расскажите о себе, ${name}
           </h2>
@@ -59,9 +70,11 @@ const AboutUser1: React.FC = () => {
             Дата рождения (дд-мм-гггг)
           </h3>
           <DatePicker format="dd-mm-y" className="birthday" value={value} onChange={data => data && onChange1} />
+          {/* <Dropdown options={opts} onChange={this._onSelect} value={defopt}/>; */}
           <Link to = "/registersecond" className="buttonLink">
         Дальше
         </Link>
+        </div>
       </IonContent>
     </IonApp>
   );
