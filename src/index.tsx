@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-
-import {Route,Switch,NavLink} from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
     <App />

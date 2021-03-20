@@ -22,3 +22,9 @@
   top: 20%; left: 30%; right: 30%;
   text-align: center;
 }
+
+.inputs {
+  text-align: left;
+  font-family: 'Open Sans';
+  color: #123C69;
+}
