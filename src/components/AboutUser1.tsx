@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import aituBridge from "@btsd/aitu-bridge";
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
+import DatePicker from 'react-date-picker';
 import {
   IonApp,
   IonContent,
@@ -47,18 +48,20 @@ const AboutUser1: React.FC = () => {
   }, []);
 
   const [name, setName] = useState("<username>");
-
+  const [value, onChange1] = useState(new Date());
   return (
     <IonApp>
       <IonContent>
-        <div className = "container">
-          <h2 color="primary" className="question">
+      <h2 color="primary" className="question">
           Расскажите о себе, ${name}
           </h2>
-        <IonButton href="/register" class="button">
-        Начать</IonButton>
-        </div>
-      
+          <h3 className="inputs" >
+            Дата рождения (дд-мм-гггг)
+          </h3>
+          <DatePicker format="dd-mm-y" className="birthday" value={value} onChange={data => data && onChange1} />
+          <Link to = "/registersecond" className="buttonLink">
+        Дальше
+        </Link>
       </IonContent>
     </IonApp>
   );

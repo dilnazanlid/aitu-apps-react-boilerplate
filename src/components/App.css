@@ -19,12 +19,53 @@
 .question {
   margin: 0;
   position: absolute;
-  top: 20%; left: 30%; right: 30%;
-  text-align: center;
+  top: 10%; left: 20%; right: 0%;
+  text-align: left;
 }
 
 .inputs {
   text-align: left;
   font-family: 'Open Sans';
   color: #123C69;
+  margin: 0;
+  position: absolute;
+  top: 20%; left: 20%; right: 0%;
+}
+.birthday {
+  margin: 0;
+  position: absolute;
+  left: 20%; right: 30%;
+  top: 25%;
+  
+}
+.buttonLink{
+  border-radius: 6px;
+  background-color: #123C69;
+  font-family: 'Open Sans';
+  text-align: center;
+  color: #EDC7B7;
+  display: inline-block;
+  margin: 0;
+  position: absolute;
+  left: 30%; right: 30%;
+  top: 80%;
+  size: 200px;
+  padding: 14px 25px;
+}
+.skipLink{
+  font-family: 'Open Sans';
+  text-align: center;
+  color: #123C69;
+  display: inline-block;
+  margin: 0;
+  position: absolute;
+  left: 10%; right: 10%;
+  top: 90%;
+  size: 100px;
+  padding: 14px 25px;
+}
+
+.top{
+  color: #123C69;
+
 }

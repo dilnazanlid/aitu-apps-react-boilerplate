@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import aituBridge from "@btsd/aitu-bridge";
-import {BrowserRouter as Router, Route, Link, Switch, BrowserRouter } from 'react-router-dom';
+import {Link, Router } from 'react-router-dom';
 import {
   IonApp,
   IonContent,
@@ -28,17 +28,21 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import AboutUser1 from "./AboutUser1";
-import Welcome from "./Welcome";
-import AboutUser2 from "./AboutUser2";
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-            <Switch>             
-                <Route path="/" exact component={Welcome}/>
-                <Route path="/register" component={AboutUser1}/>  
-                <Route path="/registersecond" component={AboutUser2}/>        
-            </Switch>
-        </BrowserRouter>   
+    <IonApp>
+      <IonContent>
+        <div className = "container">
+          <h2 color="primary" className="welcome">
+            Приветствуем Вас!
+          </h2>
+          <Link to = "/register" className="buttonLink">
+        Начать
+        </Link>
+        </div>
+      
+      </IonContent>
+    </IonApp>
   );
 };
 
