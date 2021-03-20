@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    name: {
+    userId: {
       type: String,
       required: true,
       unique: true,
@@ -16,10 +16,20 @@ const userSchema = new Schema({
     },
     dateofbirth: {
       type: Date,
+      required: true,
+      max: Date.now
+    },
+    location: {
+      type: String
+    },
+    gender: {
+      type: String,
+      enum: ['Мужчина', 'Женщина'],
       required: true
     },
-    city: {
-      type: String
+    orientation: {
+      type: String,
+      required: true
     },
   }, {
     timestamps:true,

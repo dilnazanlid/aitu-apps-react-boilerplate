@@ -18,6 +18,9 @@ connection.once('open', ()=>{
   console.log("Mongodb database connection established");
 })
 
+app.use('/users', require('./routes/user.routes'))
+app.use('/interests', require('./routes/interest.routes'));
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
