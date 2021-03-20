@@ -39,6 +39,7 @@ const AboutUser1: React.FC = () => {
       const data = await aituBridge.getPhone();
       const id = await aituBridge.getMe();
       setPhone(data.phone);
+      setName(id.name);
       setId(id.id);
     } catch (e) {
       // handle error
@@ -51,7 +52,7 @@ const AboutUser1: React.FC = () => {
       getMe();
     }
   }, []);
-
+  const [name, setName] = useState("<username>");
   const [phone, setPhone] = useState("");
   const [id, setId] = useState("");
   const [location, setLocation] = useState("Astana");
